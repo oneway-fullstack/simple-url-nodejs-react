@@ -1,0 +1,1 @@
+exports.isNumber = val => !isNaN(parseInt(val))
