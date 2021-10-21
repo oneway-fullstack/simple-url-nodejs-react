@@ -1,4 +1,4 @@
- Stage 1
+# Stage 1
 FROM node:14 as build-stage
 
 WORKDIR /simple-url-front

@@ -12,13 +12,13 @@ services:
       - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
     volumes:
       - db:/var/lib/mysql
+      - ./mysql-dump:/docker-entrypoint-initdb.d
     networks:
     - backend
 
-  backend:
+  simple-url-api:
     depends_on:
-      - mysqldb
-    container_name: simple-url-backend
+      - mysqldb    
     build: ./simple-url-api
     restart: unless-stopped
     env_file: ./.env
@@ -37,15 +37,13 @@ services:
       - backend
       - frontend
 
-  frontend:
+  simple-url-ui:
     depends_on:
-      - backend
+      - simple-url-api
     build:
       context: ./simple-url-front
       args:
         - REACT_APP_API_BASE_URL=$REACT_APP_API_URL
-
-    container_name: simple-url-frontend
     ports:
        - $REACT_LOCAL_PORT:$REACT_DOCKER_PORT
     networks:

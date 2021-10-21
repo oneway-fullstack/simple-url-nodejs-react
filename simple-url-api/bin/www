@@ -7,7 +7,7 @@ require('dotenv').config()
  */
 
 const app = require('../app');
-const debug = require('debug')('team-roaster-api:server');
+const debug = require('debug')('backend-api:server');
 const http = require('http');
 
 /**
@@ -89,7 +89,7 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
-  // console.log(`server start at port:${port}`)
+  console.log(`server ${addr} start at port:${port}`)
 }
 
 module.exports = server

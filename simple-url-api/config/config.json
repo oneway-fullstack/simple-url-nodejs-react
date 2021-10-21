@@ -1,22 +1,8 @@
 {
-  "development": {
+  "docker": {
     "username": "root",
-    "password": "",
-    "database": "simple_url_dev",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "simple_url_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "simple_url",
+    "password": "root",
+    "database": "simple_url_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   }
